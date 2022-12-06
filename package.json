@@ -33,8 +33,7 @@
   "lint-staged": {
     "*.{ts, tsx}": [
       "node_modules/.bin/eslint",
-      "prettier --write",
-      "git add" 
+      "prettier --write"    
     ]  
   }
 }
