@@ -12,7 +12,7 @@ const convertStringToBool = (bla: string): boolean => {
 }
 
 function App() {
-  const one = 2
+  const one = 3
   const [count, setCount] = useState(0)
   testFunc(15)
   convertStringToBool('15')
