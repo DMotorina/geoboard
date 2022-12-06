@@ -11,7 +11,7 @@ const convertStringToBool = (bla: string): boolean => {
   return !!bla
 }
 
-console.log("Work!")
+console.log(Wo.nknkl.nkl.rk!)
 
 function App() {
   const [count, setCount] = useState(0)
