@@ -14,7 +14,6 @@ export default defineConfig({
       },
     }),
   ],
-
   resolve: {
     alias: [
       {
@@ -23,4 +22,10 @@ export default defineConfig({
       },
     ],
   },
+  server: {
+    proxy: {
+      '/api': { target: 'http://localhost:8000', autoRewrite: true },
+      '/openapi.json': 'http://localhost:8000',
+    }
+  }
 });

@@ -1,0 +1,32 @@
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import './Login.sass';
+
+import React, { useCallback } from 'react';
+
+import { LoginForm } from './components/LoginForm';
+import { login } from './action';
+import { useAppSelector, useAppDispatch } from '@/hooks';
+import { Link } from 'react-router-dom';
+
+export const Login = () => {
+  const dispatch = useAppDispatch();
+
+  const { error } = useAppSelector((state) => state.user);
+
+  const onSubmit = useCallback(
+    (email: string, password: string) => {
+      dispatch(login({ email, password }));
+    },
+    [dispatch]
+  );
+
+  return (
+    <div className="Login">
+      <Link to="/login" />
+      {error ? <p> {error} </p> : null}
+      <LoginForm onSubmit={onSubmit} />
+    </div>
+  );
+};
