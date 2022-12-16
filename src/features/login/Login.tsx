@@ -1,14 +1,15 @@
+import './Login.sass';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import './Login.sass';
 
 import React, { useCallback } from 'react';
-
-import { LoginForm } from './components/LoginForm';
-import { login } from './action';
 import { useAppSelector, useAppDispatch } from '@/hooks';
 import { Link } from 'react-router-dom';
+
+import { login } from './action';
+
+import { LoginForm } from './components/LoginForm';
 
 export const Login = () => {
   const dispatch = useAppDispatch();

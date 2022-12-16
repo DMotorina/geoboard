@@ -27,7 +27,6 @@ const userSlice = createSlice<State, SliceCaseReducers<State>>({
     });
     builder.addCase(login.fulfilled, (state, { payload }) => {
       state.loginLoading = false;
-      console.log('--state', state);
       state.data = payload;
     });
     builder.addCase(login.rejected, (state, { payload }) => {
