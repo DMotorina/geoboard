@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const httpClient = axios.create();
+const httpClient = axios.create()
 
-httpClient.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
-httpClient.defaults.xsrfCookieName = 'csrftoken';
+httpClient.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
+httpClient.defaults.xsrfCookieName = 'csrftoken'
 
-export { httpClient };
+export { httpClient }

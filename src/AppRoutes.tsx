@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { InitOutlet } from './shared/outlets/init';
-import { AuthOutlet } from './shared/outlets/auth';
-import { PrivateOutlet } from './shared/outlets/private';
+import { InitOutlet } from './shared/outlets/init'
+import { AuthOutlet } from './shared/outlets/auth'
+import { PrivateOutlet } from './shared/outlets/private'
 
-import { Login } from './features/login/Login';
-import { HomePage } from './features/home/HomePage';
-import { Profile } from './features/profile/Profile';
+import { Login } from './features/login/Login'
+import { HomePage } from './features/home/HomePage'
+import { Profile } from './features/profile/Profile'
 
 export const AppRoutes = () => {
   return (
@@ -24,5 +24,5 @@ export const AppRoutes = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
