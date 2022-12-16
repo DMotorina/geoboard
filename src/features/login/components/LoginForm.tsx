@@ -1,34 +1,34 @@
-import '../Login.sass';
+import '../Login.sass'
 
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react'
 
-import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
-import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext'
+import { Password } from 'primereact/password'
+import { Button } from 'primereact/button'
 
 interface LoginFormProps {
-  onSubmit: (email: string, password: string) => void;
+  onSubmit: (email: string, password: string) => void
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
   const handleEmailChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  }, []);
+    setEmail(event.target.value)
+  }, [])
 
   const handlePasswordChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  }, []);
+    setPassword(event.target.value)
+  }, [])
 
   const handleSubmit = useCallback(() => {
-    onSubmit(email, password);
-  }, [email, password]);
+    onSubmit(email, password)
+  }, [email, password])
 
   return (
     <div className="Login__wrapper">
@@ -53,5 +53,5 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         onClick={() => handleSubmit()}
       />
     </div>
-  );
-};
+  )
+}

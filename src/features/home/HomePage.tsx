@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'
 
-import { Toolbar } from 'primereact/toolbar';
-import { Menu } from 'primereact/menu';
-import { Button } from 'primereact/button';
+import { Toolbar } from 'primereact/toolbar'
+import { Menu } from 'primereact/menu'
+import { Button } from 'primereact/button'
 
 export const HomePage = () => {
-  const menu = useRef<Menu>(null);
+  const menu = useRef<Menu>(null)
 
   const items = [
     {
@@ -17,15 +17,15 @@ export const HomePage = () => {
       label: 'Options',
       items: [{ label: 'Log out' }],
     },
-  ];
+  ]
 
   const leftContents = () => {
     return (
       <>
         <h3>Logo</h3>
       </>
-    );
-  };
+    )
+  }
 
   const rightContents = () => {
     return (
@@ -41,12 +41,12 @@ export const HomePage = () => {
           onClick={handlerOpenSetting}
         />
       </>
-    );
-  };
+    )
+  }
 
   const handlerOpenSetting = (event: React.MouseEvent<HTMLButtonElement>) => {
-    menu.current && menu.current.toggle(event);
-  };
+    menu.current && menu.current.toggle(event)
+  }
 
   return (
     <>
@@ -55,5 +55,5 @@ export const HomePage = () => {
       </div>
       <h1> Hello, this is HomePage! </h1>
     </>
-  );
-};
+  )
+}
