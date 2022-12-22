@@ -1,40 +1,68 @@
-import { Button } from 'primereact/button'
-import { InputText } from 'primereact/inputtext'
+import './style.sass'
+
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAppSelector } from '@/hooks'
+
+import { Button } from 'primereact/button'
+import { InputText } from 'primereact/inputtext'
+import { Message } from './components/Warning'
 
 export const Profile = () => {
   const navigate = useNavigate()
 
-  const [value1, setValue1] = useState('Daria')
-  const [value2, setValue2] = useState('Motorina')
-  const [value3, setValue3] = useState('local.user@gmail.com')
+  const firstName = useAppSelector((state) => state.user.data?.first_name)
+
+  const lastName = useAppSelector((state) => state.user.data?.last_name)
+
+  const email = useAppSelector((state) => state.user.data?.email)
+
+  const [yourFirstName, setYourFirstName] = useState(firstName)
+
+  const [yourLastName, setYourLastName] = useState(lastName)
+
+  const [yourEmail, setYourEmaile] = useState(email)
+
+  const handlClickBack = () => {
+    navigate('/')
+  }
 
   return (
     <>
-      <div>
-        <Button
-          className="p-button-rounded p-button-info"
-          icon="pi pi-arrow-left"
-          onClick={() => navigate('/')}
-        />
-        <h1>Profile info</h1>
-        <Button label="Save" className="p-button-rounded p-button-success" />
-        <div>
-          <div>
-            <span className="ml-2">First name</span>
-            <InputText value={value1} onChange={(e) => setValue1(e.target.value)} />
+      {yourFirstName !== firstName ? <Message /> : null}
+      <div className="Profile">
+        <div className="Profile-body">
+          <div className="Profile-head">
+            <Button
+              className="p-button-rounded p-button-info"
+              icon="pi pi-arrow-left"
+              onClick={handlClickBack}
+            />
+            <h1> Profile info </h1>
+            <Button
+              label="Save"
+              className="p-button-rounded p-button-success"
+              onClick={() => alert('Save!')}
+            />
           </div>
-          <div>
-            <span className="ml-2">Last name</span>
-            <InputText value={value2} onChange={(e) => setValue2(e.target.value)} />
+          <div className="Profile__first-name">
+            <span className="ml-2"> First name </span>
+            <InputText
+              value={yourFirstName}
+              onChange={(event) => setYourFirstName(event.target.value)}
+            />
           </div>
-          <div>
-            <span className="ml-2">Email</span>
-            <InputText value={value3} onChange={(e) => setValue3(e.target.value)} />
+          <div className="Profile__last-name">
+            <span className="ml-2"> Last name </span>
+            <InputText
+              value={yourLastName}
+              onChange={(event) => setYourLastName(event.target.value)}
+            />
           </div>
-          <Button label="Change your password" className="p-button-raised p-button-secondary" />
-          <Button label="Delete accaunt" className="p-button-raised p-button-danger" />
+          <div className="Profile__email">
+            <span className="ml-2"> Email </span>
+            <InputText value={yourEmail} onChange={(event) => setYourEmaile(event.target.value)} />
+          </div>
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import './Login.sass'
+import './style.sass'
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
@@ -26,7 +26,7 @@ export const Login = () => {
   return (
     <div className="Login">
       <Link to="/login" />
-      {error ? <p> {error} </p> : null}
+      {error ? <p className="error-message"> {error} </p> : null}
       <LoginForm onSubmit={onSubmit} />
     </div>
   )

@@ -1,4 +1,4 @@
-import '../Login.sass'
+import '../style.sass'
 
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
@@ -6,6 +6,7 @@ import 'primeicons/primeicons.css'
 
 import React, { useCallback, useState } from 'react'
 
+import logo from '../../../../src/img/Logo.png'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
 import { Button } from 'primereact/button'
@@ -32,7 +33,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
   return (
     <div className="Login__wrapper">
-      <h1 className="Login__title">Geoboard</h1>
+      <img src={logo} className="logoLogin" />
       <div className="Login__email">
         <span className="p-float-label">
           <InputText id="email" value={email} onChange={handleEmailChange} />
