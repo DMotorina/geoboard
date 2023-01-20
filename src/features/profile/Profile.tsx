@@ -21,13 +21,11 @@ export const Profile = () => {
   }
 
   return (
-    <>
-      <div className="Profile">
-        <div className="Profile-form">
-          <ProfileHead handlClickBack={handlClickBack} />
-          <ProfileBody firstName={firstName} lastName={lastName} email={email} />
-        </div>
+    <div className="Profile">
+      <div className="Profile-form">
+        <ProfileHead handlClickBack={handlClickBack} />
+        <ProfileBody firstName={firstName} lastName={lastName} email={email} />
       </div>
-    </>
+    </div>
   )
 }
