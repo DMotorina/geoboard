@@ -7,7 +7,7 @@ export interface Dashboard {
   widgets: [Widgets]
 }
 
-interface Location {
+export interface Location {
   name: string
   region: string
   country: string
@@ -52,7 +52,21 @@ interface Widgets {
   y: number
   width: number
   height: number
-  data: {
-    value: number
+  data: TypeWidgets
+}
+
+interface TypeWidgets {
+  value: number
+  uv_index: number
+  speed: number
+  sunrise: string
+  sunset: string
+  max: {
+    celsius: number
+    fahrenheit: number
+  }
+  min: {
+    celsius: number
+    fahrenheit: number
   }
 }

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { httpClient } from '@/shared/utils/httpClient'
-import { Dashboard } from './types'
+import { Dashboard, Location } from './types'
 
 const config = {
   headers: {
@@ -64,14 +64,14 @@ export const updateDashboardPartiel = createAsyncThunk<
 )
 
 export const searchLocation = createAsyncThunk<
-  Dashboard,
+  Location,
   { query: string },
   {
     rejectValue: string
   }
 >('dashboard/searchLocation', async ({ query }, { rejectWithValue }) => {
   try {
-    const response = await httpClient.post<Dashboard>(
+    const response = await httpClient.post<Location>(
       '/api/v1/dashboard/search-location',
       { query },
       config

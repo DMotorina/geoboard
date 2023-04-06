@@ -5,11 +5,11 @@ import { useAppSelector } from '@/hooks'
 import { Card } from 'primereact/card'
 import { Image } from 'primereact/image'
 
-interface CardsProps {
+interface ForecastCardsProps {
   temp: boolean
 }
 
-export const Cards: React.FC<CardsProps> = ({ temp }) => {
+export const ForecastCards: React.FC<ForecastCardsProps> = ({ temp }) => {
   const forecast = useAppSelector((state) => state.dashboard.data?.forecast)
 
   return (

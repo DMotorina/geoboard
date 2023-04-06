@@ -8,9 +8,9 @@ import { logout } from '@/features/login/action'
 
 import { useAppDispatch, useAppSelector } from '@/hooks'
 
-import { Cards } from './components/Cards'
-import { ForecastSubhead } from './components/ForecastSubhead'
-import { ForecastHead } from './components/ForecastHead'
+import { ForecastCards } from './components/Forecast/ForecastCards'
+import { ForecastSubhead } from './components/Forecast/ForecastSubhead'
+import { ForecastHead } from './components/Forecast/ForecastHead'
 
 import { Menu } from 'primereact/menu'
 
@@ -62,7 +62,7 @@ export const Forecast = () => {
         handlClickTempCelc={handlClickTempCelc}
         handlClickTempFar={handlClickTempFar}
       />
-      <Cards temp={temp} />
+      <ForecastCards temp={temp} />
     </div>
   )
 }

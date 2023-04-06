@@ -31,14 +31,14 @@ const dashboardSlice = createSlice<State, SliceCaseReducers<State>>({
       state.data = payload
     })
     builder.addCase(getDashboardData.rejected, (state) => {
-      state.loadingDashboard = true
+      state.loadingDashboard = false
     })
     builder.addCase(updateDashboard.pending, (state) => {
       state.update = true
       state.error = null
     })
     builder.addCase(updateDashboard.fulfilled, (state, { payload }) => {
-      state.update = true
+      state.update = false
       state.data = payload
     })
     builder.addCase(updateDashboard.rejected, (state, { payload }) => {
@@ -46,12 +46,14 @@ const dashboardSlice = createSlice<State, SliceCaseReducers<State>>({
       state.error = payload ?? null
     })
     builder.addCase(searchLocation.pending, (state) => {
-      state.search = true
+      state.search = false
       state.error = null
     })
     builder.addCase(searchLocation.fulfilled, (state, { payload }) => {
-      state.search = false
-      state.data = payload
+      state.search = true
+      if (state.data) {
+        state.data.location = payload
+      }
     })
     builder.addCase(searchLocation.rejected, (state, { payload }) => {
       state.search = false

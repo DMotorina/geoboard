@@ -22,7 +22,7 @@
     display: flex
     flex-direction: column
     align-items: center
-    margin-top: 20%
+    margin-top: 10%
 
 .forecast
     grid-area: 1 / 2 / 2 / 4
@@ -79,5 +79,126 @@
     width: 25%
     margin: 2% 2%
 
-h2, h4
+h2, h3, h4
     font-family: 'Merriweather', serif
+
+.p-knob-text-humidity
+
+    text
+        display: none
+
+.widget-cards
+    box-shadow: 0px 5px 20px 5px rgba(205, 200, 200, 0.5),
+    border-radius: 22px
+
+.card
+    width: auto
+    height: auto
+
+.UV
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.UV__head
+    grid-area: 1 / 1 / 3 / 2
+
+    h2
+        margin-top: 25%
+        margin-left: 11%
+
+.UV__body
+    grid-area: 1 / 2 / 3 / 3
+
+    svg
+        width: 80%
+        height: 80%
+        margin-top: -5%
+        margin-left: 11%
+
+.p-knob-value
+    stroke: #6495ED
+
+.wind
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.wind__head
+    grid-area: 1 / 1 / 3 / 2
+
+    h2
+        margin-top: 25%
+        margin-left: 11%
+
+.wind__body
+    grid-area: 1 / 2 / 3 / 3
+    margin-left: 8%
+
+    h2
+        margin-left: 5%
+
+.RiseAndSet
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.RiseAndSet__head
+    grid-area: 1 / 1 / 3 / 2
+    width: 120%
+    margin-left: 4%
+    margin-top: 12%
+
+.RiseAndSet__body
+    grid-area: 1 / 2 / 3 / 3
+    width: 60%
+    margin-left: 30%
+
+.pi-arrow-circle-up
+    svg
+        background: red
+
+.MinMaxTemp
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.MinMaxTemp__head
+    grid-area: 1 / 1 / 3 / 2
+
+.MinMaxTemp__body
+    grid-area: 1 / 2 / 3 / 3
+
+.visibility
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.visibility__head
+    grid-area: 1 / 1 / 3 / 2
+
+.visibility__body
+    grid-area: 1 / 2 / 3 / 3
+
+.humidity
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 0px
+    grid-row-gap: 0px
+
+.humidity__head
+    grid-area: 1 / 1 / 3 / 2
+
+.humidity__body
+    grid-area: 1 / 2 / 3 / 3

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo from '../../../../img/Logo.png'
+import logo from '../../../../../img/Logo.png'
 
 import { Menu } from 'primereact/menu'
 import { Avatar } from 'primereact/avatar'

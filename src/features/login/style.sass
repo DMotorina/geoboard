@@ -1,65 +1,88 @@
 .Login
     width: 100vw
     height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
     background: #F5F5F5
 
 .Login__wrapper
+    max-width: 100% 
     width: 30%
-    height: 450px
+    max-height: 100%
+    height: 48%
     display: flex
     flex-direction: column
-    margin-left: auto
-    margin-right: auto
+    justify-content: space-evenly
     box-shadow: 0px 5px 20px 5px rgba(209, 209, 209, 0.5)
-    border-radius: 15px
+    border-radius: 1rem
     background: #fff
-    position: relative
-    top: 20%
+
+    @media (min-width: 1366px) and (max-width: 1845px)
+        width: auto
+
+    @media (min-width: 1847px)
+        width: auto
 
 .logoLogin
     max-width: 100%
     width: 75%
-    margin-left: auto
-    margin-right: auto
-    margin-top: 6%
+    align-self: center
 
 .p-float-label
-    font-size: 20px
-    padding-top: 2px
+    font-size: 1.25rem
+    padding-top: 0.1rem
 
 .Login__email
-    width: 67%
-    margin-left: auto
-    margin-right: auto
-    padding-top: 7%
+    max-width: 100%
+    width: 70%
+    align-self: center
 
     input
-        width: 100% 
+        max-width: 100%
+        width: 24.2rem
+        
+        @media (min-width: 1366px) and (max-width: 1845px)
+            width: 100%
+
+        @media (min-width: 1847px)
+            width: 100%        
 
 .Login__password
-    padding-top: 8%
-    padding-bottom: 8%
-    width: 67%
-    margin-left: auto
-    margin-right: auto
-    padding-top: 7%
+    max-width: 100%
+    width: 70%
+    align-self: center
 
     input
-        width: 371px
+        max-width: 100%
+        width: 24.2rem
 
+        @media (min-width: 1366px) and (max-width: 1845px)
+            width: 34.8rem
 
-        @media only screen and (max-width: 1300px)
-            width: 100%
-
-        @media only screen and (max-width: 767px)
-            width: 100%
+        @media (min-width: 1847px)
+            width: 34.8rem  
 
 .Login__enter
+    max-width: 100%
     width: 30%
-    height: 50px
+    max-height: 100%
+    height: 11%
     align-self: center
-    margin-left: auto
-    margin-right: auto
+
+    @media (min-width: 1366px) and (max-width: 1845px)
+        height: 10%
+        width: 30%
+
+        span
+            font-size: 1.3rem
+
+    @media (min-width: 1847px)
+        height: 10%
+        width: 30%
+
+        span
+            font-size: 1.3rem
 
 .p-button.p-component:hover
     background: #6e6d6d
@@ -75,16 +98,3 @@
 
     &:hover
         background: #413d3d  
-
-.error-message
-    width: 20%
-    height: 40px
-    display: flex
-    justify-content: center
-    margin-left: 40%
-    background: #EB5A46
-    border: 1px solid #EB5A46
-    border-radius: 4px
-    color: white
-    font-size: 25px
-    text-align: center

@@ -9,6 +9,13 @@ import { Responsive, WidthProvider } from 'react-grid-layout'
 import { Card } from 'primereact/card'
 import { useAppSelector } from '@/hooks'
 
+import { UVIndex } from './components/TypeOfWidgets/UVIndex'
+import { WindStatus } from './components/TypeOfWidgets/WindStatus'
+import { SunriseAndSunset } from './components/TypeOfWidgets/SunriseAndSunset'
+import { Humidity } from './components/TypeOfWidgets/Humidity'
+import { Visibility } from './components/TypeOfWidgets/Visibility'
+import { MinMaxTemp } from './components/TypeOfWidgets/MinMaxTemp'
+
 const layout = [
   { i: 'UV index', x: 0, y: 0, w: 1, h: 1 },
   { i: 'Wind Status', x: 1, y: 0, w: 1, h: 1 },
@@ -30,16 +37,23 @@ export const Widgets = () => {
         layouts={{ lg: layout }}
         breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
         cols={{ lg: 3, md: 4, sm: 3, xs: 2, xxs: 1 }}
-        rowHeight={190}
-        width={1000}
+        rowHeight={200}
+        width={600}
       >
         {widgets?.map(({ data, uuid, widget_type }) => (
-          <Card key={uuid}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <h2>{widget_type}</h2>
-              <span className="material-symbols-outlined">settings</span>
+          <Card key={uuid} className="widget-cards">
+            <div className="card">
+              {widget_type === 'uv_index' ? <UVIndex value={data.uv_index} /> : null}
+              {widget_type === 'wind_status' ? <WindStatus data={data.speed} /> : null}
+              {widget_type === 'sunrise_sunset' ? (
+                <SunriseAndSunset sunrise={data.sunrise} sunset={data.sunset} />
+              ) : null}
+              {widget_type === 'humidity' ? <Humidity value={data.value} /> : null}
+              {widget_type === 'visibility' ? <Visibility value={data.value} /> : null}
+              {widget_type === 'min_max_temperature' ? (
+                <MinMaxTemp minC={data.min.celsius} maxC={data.max.celsius} />
+              ) : null}
             </div>
-            <h2 style={{ lineHeight: '1.5' }}>{data.value}</h2>
           </Card>
         ))}
       </ResponsiveGridLayout>
